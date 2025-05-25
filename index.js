@@ -25,7 +25,7 @@ const client = new Client()
 const users = new Users(client);
 
 // Endpoint  para eliminar usuarios
-app.post("/eliminar-usuario", async (req, res) => {
+app.post("/api/eliminar-usuario", async (req, res) => {
   try {
     const { userId } = req.body;
     
@@ -51,7 +51,7 @@ app.post("/eliminar-usuario", async (req, res) => {
 });
 
 
-app.post("/bloquear", async (req, res) => {
+app.post("/api/bloquear", async (req, res) => {
   const { userId, block } = req.body;
 
   const response = await fetch(`https://fra.cloud.appwrite.io/v1/users/${userId}/status`, {
