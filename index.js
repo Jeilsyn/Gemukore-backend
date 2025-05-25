@@ -18,11 +18,12 @@ app.use(express.json());
 
 // Configuración de Appwrite 
 const client = new Client()
-  .setEndpoint("APPWRITE_ENDPOINT")
-  .setProject("APPWRITE_PROJECT_ID")
-  .setKey("APPWRITE_API_KEY"); // ¡NO USES LA KEY QUE PUBLICASTE ANTES!
+  .setEndpoint(process.env.APPWRITE_ENDPOINT)
+  .setProject(process.env.APPWRITE_PROJECT_ID)
+  .setKey(process.env.APPWRITE_API_KEY); // ¡NO USES LA KEY QUE PUBLICASTE ANTES!
 
 const users = new Users(client);
+
 
 // Endpoint  para eliminar usuarios
 app.post("/api/eliminar-usuario", async (req, res) => {
