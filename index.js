@@ -9,7 +9,7 @@ const corsOptions = {
   origin: 'http://localhost:3000', //   URL de frontend
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
-  credentials: false, 
+  credentials: true, 
   optionsSuccessStatus: 200
 };
 
@@ -20,7 +20,7 @@ app.use(express.json());
 const client = new Client()
   .setEndpoint(process.env.APPWRITE_ENDPOINT)
   .setProject(process.env.APPWRITE_PROJECT_ID)
-  .setKey(process.env.APPWRITE_API_KEY); // ¡NO USES LA KEY QUE PUBLICASTE ANTES!
+  .setKey(process.env.APPWRITE_API_KEY); 
 
 const users = new Users(client);
 
